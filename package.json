@@ -12,7 +12,10 @@
 		"express": "~4.16.1",
 		"if-env": "^1.0.4",
 		"morgan": "~1.9.1",
-		"nodemon": "^1.19.2"
+		"mysql2": "^1.7.0",
+		"nodemon": "^1.19.2",
+		"sequelize": "^5.19.0",
+		"sequelize-cli": "^5.5.1"
 	},
 	"devDependencies": {}
 }
