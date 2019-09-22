@@ -18,7 +18,7 @@ module.exports = {
   "production": {
     "username": process.env.DB_USERNAME,
     "password": process.env.DB_PASSWORD,
-    "database": "heroku_3fcb7241bb24302",
+    "database": process.env.DB_NAME,
     "host": process.env.DB_HOST,
     "dialect": "mysql"
   }
