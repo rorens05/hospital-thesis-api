@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-let index = require('../controllers/index');
+let auth = require('../controllers/auth_controller');
 
-router.get('/', index.index);
+router.post('/login', auth.login)
+router.post('/register', auth.register)
 
 module.exports = router;
