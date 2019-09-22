@@ -1,3 +1,9 @@
+require("babel-core/register");
+require("babel-polyfill");
+require("@babel/register")({
+	presets: ["@babel/preset-env"]
+});
+
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
