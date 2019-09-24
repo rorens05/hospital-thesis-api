@@ -13,13 +13,6 @@ module.exports = class UserValidation {
   }
 
   validate(){
-    let valid = true;
-    let messages = []
-
-    if(validator.isEmail(this.email)) messages.push("Email is not valid") 
-    
     return response
   }
-
-
 }

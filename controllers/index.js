@@ -1,6 +1,6 @@
-const db = require('./../models/index')
-const {num} = require('./../util/sample')
+import auth from './../middleware/middleware'
 
-exports.index = (req, res, next) => {
-	res.json({ status: 'ok', message: 'success', db_name: process.env.NODE_ENV, sample: num});
+export const index = (req, res, next) => {
+	auth()
+	res.json({ status: 'ok', message: 'success', scratch: 'sample'});
 };
