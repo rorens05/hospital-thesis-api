@@ -3,7 +3,7 @@ require("babel-polyfill");
 require("@babel/register")({
 	presets: ["@babel/preset-env"]
 });
-
+const cors = require('cors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -13,7 +13,9 @@ const db = require('./models/index')
 const app = express();
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const usersRouter = require('./routes/users')
+const familyRouter = require('./routes/family');
+const patientRouter = require('./routes/patients');
 
 db.sequelize
   .authenticate()
@@ -31,10 +33,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors({origin: '*'}));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
-
+app.use('/families', familyRouter);
+app.use('/patients', patientRouter);
 
 module.exports = app;

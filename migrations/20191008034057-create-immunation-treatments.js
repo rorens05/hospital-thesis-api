@@ -8,6 +8,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      patient_id: {
+        type: Sequelize.INTEGER
+      },
       mother_name: {
         type: Sequelize.STRING
       },
