@@ -18,6 +18,7 @@ const familyRouter = require('./routes/family');
 const patientRouter = require('./routes/patients');
 const generalRouter = require('./routes/general_treatments');
 const tbRouter = require('./routes/tb_treatments');
+const dentalRouter = require('./routes/dental');
 
 db.sequelize
   .authenticate()
@@ -36,11 +37,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({origin: '*'}));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/families', familyRouter);
 app.use('/patients', patientRouter);
 app.use('/general', generalRouter);
 app.use('/tb', tbRouter);
+app.use('/dental', dentalRouter);
 
 module.exports = app;
