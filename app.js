@@ -17,6 +17,7 @@ const usersRouter = require('./routes/users')
 const familyRouter = require('./routes/family');
 const patientRouter = require('./routes/patients');
 const generalRouter = require('./routes/general_treatments');
+const tbRouter = require('./routes/tb_treatments');
 
 db.sequelize
   .authenticate()
@@ -40,5 +41,6 @@ app.use('/users', usersRouter);
 app.use('/families', familyRouter);
 app.use('/patients', patientRouter);
 app.use('/general', generalRouter);
+app.use('/tb', tbRouter);
 
 module.exports = app;
