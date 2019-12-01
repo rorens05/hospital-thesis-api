@@ -23,7 +23,7 @@ exports.login = async (req, res, next) => {
 			let role = user.role;
 			var token = jwt.sign({ id, role, email }, process.env.JWT_SECRET);
 			console.log(jwt.verify(token, process.env.JWT_SECRET));
-			success(res, { message: 'Login successful', Authorization: 'Bearer ' + token });
+			success(res, { message: 'Login successful', Authorization: 'Bearer ' + token, role });
 			return;
 		}
 	}
