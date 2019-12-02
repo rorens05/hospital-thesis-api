@@ -12,6 +12,7 @@ exports.login = async (req, res, next) => {
 	let response = await db.User.findAndCountAll({
 		where: {
 			username: email || ''
+			
 		}
 	});
 
